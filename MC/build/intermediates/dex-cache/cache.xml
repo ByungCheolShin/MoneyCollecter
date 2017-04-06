@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<items version="2" >
+
+    <item
+        is-multidex="true"
+        jar="C:\Users\sbc01\Dropbox\MoneyCollecter\MC\MC\app\build\intermediates\incremental-classes\debug\instant-run-bootstrap.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="bb77c1df432b0473fbea33c8fd5090c74586bd73">
+        <dex dex="C:\Users\sbc01\Dropbox\MoneyCollecter\MC\MC\app\build\intermediates\transforms\dex\debug\folders\1000\10000\instant-run-bootstrap_6570ccb9bbf98fdbae6a57553e8d995645c3da2a\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\sbc01\Dropbox\MoneyCollecter\MC\MC\app\libs\mpandroidchartlibrary-2-2-4.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="e5455fb794bfcbeb75da252dffd907794614f7fd">
+        <dex dex="C:\Users\sbc01\Dropbox\MoneyCollecter\MC\MC\app\build\intermediates\transforms\dex\debug\folders\1000\2\mpandroidchartlibrary-2-2-4_d7fe3111549267672022f359bbe379bf52f946ec\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\sbc01\Dropbox\MoneyCollecter\MC\MC\app\build\intermediates\incremental-runtime-classes\debug\instant-run.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="c82741bc129dd5f99f11a4ab8666ae24262053b6">
+        <dex dex="C:\Users\sbc01\Dropbox\MoneyCollecter\MC\MC\app\build\intermediates\transforms\dex\debug\folders\1000\10000\instant-run_67134d7fcfd21231ac298b87b8caf818ccab59ac\classes.dex" />
+    </item>
+
+</items>

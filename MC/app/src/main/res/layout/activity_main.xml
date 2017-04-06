@@ -1,0 +1,227 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.example.cm.mc.MainActivity">
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <Button
+            android:layout_width="match_parent"
+            android:id="@+id/DateButton"
+            android:layout_gravity="center_horizontal"
+            android:layout_height="wrap_content"
+            android:background="#00000000"
+            android:scaleX="1.5"
+            android:scaleY="1.5" />
+
+        <com.github.mikephil.charting.charts.PieChart
+            android:id="@+id/chart"
+            android:layout_width="match_parent"
+            android:layout_height="350dp" />
+
+        <ListView
+            android:id="@+id/expenseList"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentStart="false"
+            android:layout_gravity="bottom"
+            tools:ignore="ObsoleteLayoutParam" />
+
+    </LinearLayout>
+
+    <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:id="@+id/s_inputpage"
+            android:layout_gravity="right"
+            android:visibility="gone"
+            android:background="#00000000"
+            android:layout_height="400dp"
+            tools:ignore="RtlHardcoded,UselessParent">
+
+                        <FrameLayout
+                            android:id="@android:id/tabcontent"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent">
+
+                            <LinearLayout
+                                android:id="@+id/income_page"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:orientation="vertical">
+                                <FrameLayout
+                                    android:id="@android:id/tabcontent"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent">
+
+                                    <LinearLayout
+                                        android:id="@+id/수입"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="match_parent"
+                                        android:orientation="vertical"
+                                        android:gravity="right">
+
+                                        <TextView
+                                            android:id="@+id/Text2"
+                                            android:layout_width="match_parent"
+                                            android:layout_height="50dp"
+                                            android:background="#ececec"
+                                            android:clickable="false"
+                                            android:ems="10"
+                                            android:gravity="center_vertical"
+                                            android:text="    내용"
+                                            android:textSize="17dp"
+                                            android:textStyle="bold"
+                                            tools:ignore="HardcodedText,LabelFor,SpUsage" />
+
+                                        <EditText
+                                            android:layout_width="match_parent"
+                                            android:layout_height="50dp"
+                                            android:background="#ffffff"
+                                            android:inputType="textPersonName"
+                                            android:ems="10"
+                                            android:textSize="17dp"
+                                            android:hint="    내용"
+                                            android:id="@+id/contents"
+                                            tools:ignore="HardcodedText,SpUsage" />
+
+                                        <TextView
+                                            android:id="@+id/Text7"
+                                            android:layout_width="match_parent"
+                                            android:layout_height="50dp"
+                                            android:background="#ececec"
+                                            android:ems="10"
+                                            android:gravity="center_vertical"
+                                            android:text="    상세 내용"
+                                            android:textSize="17dp"
+                                            android:textStyle="bold"
+                                            tools:ignore="HardcodedText,LabelFor,SpUsage" />
+
+                                        <EditText
+                                            android:layout_width="match_parent"
+                                            android:layout_height="50dp"
+                                            android:background="#ffffff"
+                                            android:inputType="textPersonName"
+                                            android:textSize="17dp"
+                                            android:hint="    상세 내용"
+                                            android:ems="10"
+                                            android:id="@+id/details"
+                                            tools:ignore="HardcodedText,SpUsage" />
+
+                                        <TextView
+                                            android:id="@+id/Text5"
+                                            android:layout_width="match_parent"
+                                            android:layout_height="50dp"
+                                            android:background="#ececec"
+                                            android:ems="10"
+                                            android:gravity="center_vertical"
+                                            android:text="    금액"
+                                            android:textSize="17dp"
+                                            android:textStyle="bold"
+                                            tools:ignore="HardcodedText,LabelFor,SpUsage" />
+
+                                        <EditText
+                                            android:layout_width="match_parent"
+                                            android:layout_height="50dp"
+                                            android:background="#ffffff"
+                                            android:inputType="textPersonName"
+                                            android:textSize="17dp"
+                                            android:ems="10"
+                                            android:hint="    원"
+                                            android:id="@+id/price"
+                                            tools:ignore="HardcodedText,SpUsage" />
+
+
+                                        <Button
+                                            android:layout_width="match_parent"
+                                            android:layout_height="20dp"
+                                            android:background="#00000000"
+                                            android:id="@+id/nothing2" />
+                                        <Button
+                                            android:layout_width="30dp"
+                                            android:layout_height="wrap_content"
+                                            android:layout_alignParentEnd="true"
+                                            android:background="@drawable/circle_menu_button"
+                                            android:drawableLeft="@drawable/self_input"
+                                            android:id="@+id/input"
+                                            tools:ignore="ObsoleteLayoutParam,RtlHardcoded" />
+                                    </LinearLayout>
+
+                                </FrameLayout>
+
+                            </LinearLayout>
+
+                        </FrameLayout>
+        </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/menuPage"
+        android:layout_width="match_parent"
+        android:layout_height="500dp"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentStart="true"
+        android:gravity="right|center_vertical"
+        android:orientation="horizontal"
+        android:visibility="gone">
+
+        <Button
+            android:id="@+id/self_input_income"
+            android:layout_width="32dp"
+            android:layout_height="32dp"
+            android:layout_alignParentEnd="true"
+            android:background="@drawable/circle_menu_button"
+            android:drawableLeft="@drawable/add_icon"
+            tools:ignore="ButtonStyle,ObsoleteLayoutParam,RtlHardcoded" />
+
+        <Button
+            android:id="@+id/self_input_expense"
+            android:layout_width="32dp"
+            android:layout_height="32dp"
+            android:layout_weight="0.00"
+            android:background="@drawable/circle_menu_button"
+            android:drawableLeft="@drawable/minus_icon"
+            tools:ignore="ButtonStyle" />
+
+        <Button
+            android:id="@+id/camera_input"
+            android:layout_width="37dp"
+            android:layout_height="32dp"
+            android:layout_alignParentEnd="true"
+            android:background="@drawable/circle_menu_button"
+            android:drawableLeft="@drawable/camera_input"
+            tools:ignore="ButtonStyle,ObsoleteLayoutParam,RtlHardcoded" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/menu_button_page"
+        android:layout_width="match_parent"
+        android:layout_height="450dp"
+        android:gravity="right|center_vertical"
+        android:orientation="vertical"
+        android:weightSum="1"
+        tools:ignore="RtlHardcoded"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentStart="true">
+
+        <Button
+            android:id="@+id/menuButton"
+            android:layout_width="37dp"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_centerVertical="true"
+            android:background="@drawable/circle_menu_button"
+            android:drawableLeft="@drawable/menu_icon"
+            android:elevation="0dp"
+            tools:ignore="HardcodedText,InefficientWeight,ObsoleteLayoutParam,RtlHardcoded" />
+
+    </LinearLayout>
+
+</RelativeLayout>
