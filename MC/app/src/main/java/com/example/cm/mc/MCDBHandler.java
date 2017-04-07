@@ -7,6 +7,7 @@ import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 import android.support.v7.app.AppCompatActivity;
+import android.widget.Adapter;
 
 /**
  * Created by sbc01 on 2017-03-15.
@@ -16,8 +17,8 @@ import android.support.v7.app.AppCompatActivity;
 
 public class MCDBHandler extends SQLiteOpenHelper {
 
-    private static final String DATABASE_NAME = "InputData.db";
-    private static final String TABLE_PRODUCTS = "InputData";
+    private static final String DATABASE_NAME = "MCData.db";
+    private static final String TABLE_PRODUCTS = "MCData";
 
     public static final String COLUMN_DATE = "_date";                                               //데이터베이스에 들어갈 데이터의 종류
     public static final String COLUMN_ID = "_id";
@@ -51,27 +52,47 @@ public class MCDBHandler extends SQLiteOpenHelper {
         onCreate(db);
     }
 
-    public void InsertFirst()
+    public void InsertFirst(InputData _input, TextListAdapter adapter)
     {
         SQLiteDatabase db = this.getWritableDatabase();
         ContentValues values = new ContentValues();
 
-        values.put(COLUMN_DATE, "20160403");
-        values.put(COLUMN_ID, 1);
-        values.put(COLUMN_DATA, "asdf");
-        values.put(COLUMN_DATE, "asdf");
-        values.put(COLUMN_DATE, "50000");
+        values.put(COLUMN_DATE, _input.getDate());
+        values.put(COLUMN_ID, _input.getID());
+        values.put(COLUMN_DATA, _input.getData());
+        values.put(COLUMN_DETAILDATA, _input.getDetailData());
+        values.put(COLUMN_COST, _input.getCategory());
+        values.put(COLUMN_DATE, _input.getCost());
+
+        adapter.addItem(values.getAsString(COLUMN_DATE), "asdf", "asdf");
 
         db.insert(TABLE_PRODUCTS, null, values);
+        db.close();
     }
 
-    public InputData findASDF()
+    public void FindData(int year, int month, int date, TextListAdapter adapter)
     {
         SQLiteDatabase db = this.getWritableDatabase();
-        Cursor cursor = db.rawQuery("SELECT * FROM " + TABLE_PRODUCTS, null);
-        InputData _data_ = new InputData();
-        cursor.moveToFirst();
-        _data_.setDate("asdf");
-        return _data_;
+
+        String query = "SELECT * FROM " + TABLE_PRODUCTS;
+        Cursor cursor = db.rawQuery(query, null);
+        if(cursor.getCount() == 0)
+        {
+            adapter.addItem("asdf", "asdf", "12");
+        }
+        else
+        {
+            cursor.moveToFirst();
+            adapter.addItem(cursor.getString(0), Integer.toString(cursor.getColumnIndex(COLUMN_COST)), Integer.toString(cursor.getCount()));
+        }
+        cursor.close();
+        db.close();
+    }
+
+    public void Drop()
+    {
+        SQLiteDatabase db = this.getWritableDatabase();
+        db.execSQL("DROP TABLE " + TABLE_PRODUCTS);
+        db.close();
     }
 }

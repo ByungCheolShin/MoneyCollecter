@@ -12,6 +12,7 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.LinearLayout;
 import android.widget.ListView;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.github.mikephil.charting.charts.PieChart;
@@ -340,11 +341,21 @@ public class MainActivity extends AppCompatActivity {
     public void loadView(int year, int month, int date)
     {
         MCDBHandler MCDB = new MCDBHandler(this, null, null ,1);
-        MCDB.InsertFirst();
-        InputData a = MCDB.findASDF();
 
-        adapter[month-1][date-1].addItem("내용", "상세내용", "금액");
-        adapter[month-1][date-1].addItem("asdf", "asdf", "10000");
+        InputData inputData = new InputData();
+        inputData.setDate(Integer.toString(year) + Integer.toString(month) + Integer.toString(date));
+        inputData.setId(1);
+        inputData.setData("HI");
+        inputData.setDetailData("HI");
+        inputData.setCategory("FOOD");
+        inputData.setCost(12000);
+
+        adapter[month - 1][date - 1].addItem(inputData.getDate(), inputData.getData(), Integer.toString(inputData.getCost()));
+
+        MCDB.InsertFirst(inputData, adapter[month - 1][date - 1]);
+        MCDB.FindData(year, month, date, adapter[month - 1][date - 1]);
+        //MCDB.Drop();
+
         listview.setAdapter(adapter[month-1][date-1]);
     }
 
